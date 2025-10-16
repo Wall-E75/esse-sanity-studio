@@ -1,5 +1,3 @@
-import { validateBasePaths, validation } from "sanity";
-
 export default {
     name: 'event',
     title: 'Evénement',
