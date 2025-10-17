@@ -1,7 +1,10 @@
+import { MdSportsHandball } from "react-icons/md"
+
 export default {
     name: 'activite',
     title: 'Activité',
     type: 'document',
+    icon: MdSportsHandball,
     fields: [
         {
             name: 'title',

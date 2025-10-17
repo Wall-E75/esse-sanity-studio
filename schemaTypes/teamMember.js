@@ -1,7 +1,10 @@
+import { MdPeople } from "react-icons/md"
+
 export default {
     name: 'teamMember',
     title: 'Membre du bureau',
     type: 'document',
+    icon: MdPeople,
     fields: [
         {
             name: 'name',

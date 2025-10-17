@@ -1,7 +1,10 @@
+import { MdSettings } from "react-icons/md"
+
 export default {
     name: 'siteSettings',
     title: 'Information Générales',
     type: 'document',
+    icon: MdSettings,
     // Singleton - Un seul document possible
     __experimental_actions: ['update', 'publish'], // 'create' et 'delete' sont désactivés
     fields: [

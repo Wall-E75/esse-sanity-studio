@@ -1,7 +1,10 @@
+import {MdNewspaper} from 'react-icons/md';
+
 export default {
     name: 'article',
     title: 'Actualité',
     type: 'document',
+    icon: MdNewspaper,
     fields: [
         {
             name: 'title',

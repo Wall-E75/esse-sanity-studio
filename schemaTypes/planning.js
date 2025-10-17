@@ -1,7 +1,9 @@
+import { MdCalendarMonth } from "react-icons/md"
 export default {
     name: 'planning',
     title: 'Planning Mensuel',
     type: 'document',
+    icon: MdCalendarMonth,
     fields: [
         {
             name: 'title',
