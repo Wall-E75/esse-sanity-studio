@@ -4,6 +4,7 @@ import activite from './activite';
 import event from './event';
 import siteSettings from './siteSettings';
 import teamMember from './teamMember';
+import partenaire from './partenaire';
 
 export const schemaTypes = [
     article, 
@@ -11,5 +12,6 @@ export const schemaTypes = [
     activite, 
     event, 
     siteSettings,
-    teamMember
+    teamMember,
+    partenaire
 ];

@@ -175,7 +175,8 @@ export default {
 
             return {
                 title: title,
-                subtitle: `${structureLabel[structure] || ''} ${category ? '- ' + category : ''} ${!isActive ? '- Inactive' : ''}`
+                subtitle: `${structureLabel[structure] || ''} ${category ? '- ' + category : ''} ${!isActive ? '- Inactive' : ''}`,
+                media: media
             }
         }
     }
