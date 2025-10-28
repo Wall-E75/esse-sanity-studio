@@ -14,13 +14,13 @@ export default {
         },
         {
             name: 'slug',
-            title: 'Slug (URL',
+            title: 'slug (URL)',
             type: 'slug',
             option: {
                 source: 'title',
                 maxLength: 96
             },
-            description: 'Cliquez sur "Generate" pour créer automatiquement',
+            description: 'URL de l\'article',
             validation: Rule => Rule.required()
         },
         {
