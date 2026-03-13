@@ -69,11 +69,11 @@ export default {
             description: 'Description optionnelle du planning (points forts du mois, etc.)'
         },
         {
-            name: 'isActive',
-            title: 'Planning Actif',
-            type: 'boolean',
-            description: 'Cochez pour afficher ce planning sur la page d\'accueil',
-            initialValue: true
+            name: 'expiresAt',
+            title: 'Date de fin d\'affichage',
+            type: 'date',
+            description: 'Le planning sera automatiquement archivé après cette date. Pour un planning multi-mois, indiquez la fin de la dernière période couverte.',
+            validation: Rule => Rule.required().error('La date de fin est obligatoire')
         }
     ],
     preview: {
