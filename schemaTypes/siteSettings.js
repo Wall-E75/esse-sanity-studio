@@ -46,6 +46,39 @@ export default {
             description: 'Présentation détaillée pour la page "À propos"'
         },
 
+        // === HERO ===
+        {
+            name: 'heroSlides',
+            title: 'Images du Hero',
+            type: 'array',
+            description: 'Images qui défilent en arrière-plan de la page d\'accueil (3 à 5 images recommandées)',
+            validation: Rule => Rule.max(8),
+            of: [{
+                type: 'object',
+                fields: [
+                    {
+                        name: 'image',
+                        title: 'Image',
+                        type: 'image',
+                        options: { hotspot: true },
+                        validation: Rule => Rule.required()
+                    },
+                    {
+                        name: 'alt',
+                        title: 'Description de l\'image (accessibilité)',
+                        type: 'string',
+                        description: 'Ex: Cours de boxe au gymnase'
+                    }
+                ],
+                preview: {
+                    select: { media: 'image', title: 'alt' },
+                    prepare({ media, title }) {
+                        return { title: title || 'Slide sans description', media }
+                    }
+                }
+            }]
+        },
+
         // === ADRESSES ===
         {
             name: 'gymnaseAddress',
