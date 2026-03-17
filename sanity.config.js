@@ -1,6 +1,5 @@
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
-import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
@@ -16,61 +15,34 @@ export default defineConfig({
         S.list()
           .title('Association ESSE')
           .items([
-            // === CONFIGURATION ===
+            // Singleton : accès direct au document unique
             S.listItem()
-              .title('⚙️ Configuration')
+              .title('Informations du site')
+              .id('siteSettings')
               .child(
-                S.list()
-                  .title('Configuration')
-                  .items([
-                    S.documentTypeListItem('siteSettings').title('Informations Générales'),
-                  ])
+                S.document()
+                  .schemaType('siteSettings')
+                  .documentId('siteSettings')
+                  .title('Informations du site')
               ),
-            
+
             S.divider(),
-            
-            // === CONTENU ===
-            S.listItem()
-              .title('📝 Contenu')
-              .child(
-                S.list()
-                  .title('Contenu')
-                  .items([
-                    S.documentTypeListItem('article').title('Actualités'),
-                    S.documentTypeListItem('planning').title('Plannings Mensuels'),
-                  ])
-              ),
-            
+
+            // Contenu éditorial — du plus fréquent au moins fréquent
+            S.documentTypeListItem('article').title('Actualités'),
+            S.documentTypeListItem('event').title('Événements'),
+            S.documentTypeListItem('planning').title('Plannings Mensuels'),
+
             S.divider(),
-            
-            // === ACTIVITÉS & ÉVÉNEMENTS ===
-            S.listItem()
-              .title('🎯 Activités & Événements')
-              .child(
-                S.list()
-                  .title('Activités & Événements')
-                  .items([
-                    S.documentTypeListItem('activite').title('Activités'),
-                    S.documentTypeListItem('event').title('Événements'),
-                  ])
-              ),
-            
+
+            S.documentTypeListItem('activite').title('Activités'),
+
             S.divider(),
-            
-            // === ÉQUIPE & PARTENAIRES ===
-            S.listItem()
-              .title('👥 Équipe & Partenaires')
-              .child(
-                S.list()
-                  .title('Équipe & Partenaires')
-                  .items([
-                    S.documentTypeListItem('teamMember').title('Membres du bureau'),
-                    S.documentTypeListItem('partenaire').title('Partenaires'),
-                  ])
-              ),
-          ])
+
+            S.documentTypeListItem('teamMember').title("Membres de l'équipe"),
+            S.documentTypeListItem('partenaire').title('Partenaires'),
+          ]),
     }),
-    visionTool(),
   ],
 
   schema: {
