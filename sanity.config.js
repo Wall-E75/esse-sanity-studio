@@ -9,20 +9,32 @@ export default defineConfig({
   projectId: 'b1t2bis9',
   dataset: 'production',
 
+  // Empêche la création et la suppression du document siteSettings
+  document: {
+    newDocumentOptions: (prev) =>
+      prev.filter((template) => template.templateId !== 'siteSettings'),
+    actions: (prev, {schemaType}) => {
+      if (schemaType === 'siteSettings') {
+        return prev.filter(({action}) => action !== 'delete' && action !== 'duplicate')
+      }
+      return prev
+    },
+  },
+
   plugins: [
     structureTool({
       structure: (S) =>
         S.list()
           .title('Association ESSE')
           .items([
-            // Singleton : accès direct au document unique
+            // Singleton : ouverture directe du document existant
             S.listItem()
               .title('Informations du site')
               .id('siteSettings')
               .child(
                 S.document()
                   .schemaType('siteSettings')
-                  .documentId('siteSettings')
+                  .documentId('867ab9f2-7c0e-478c-b59b-13e8aba0e00a')
                   .title('Informations du site')
               ),
 
