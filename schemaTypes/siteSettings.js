@@ -5,8 +5,7 @@ export default {
     title: 'Information Générales',
     type: 'document',
     icon: MdSettings,
-    // Singleton - Un seul document possible
-    __experimental_actions: ['update', 'publish'], // 'create' et 'delete' sont désactivés
+    // Singleton - accès direct via la structure du studio (sanity.config.js)
     fields: [
         // IDENTITÉ //
         {

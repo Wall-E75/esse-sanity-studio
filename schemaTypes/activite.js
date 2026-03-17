@@ -143,7 +143,7 @@ export default {
             title: 'Ordre d\'affichage',
             type: 'number',
             description: 'Pour trier les activités (1 = en premier)',
-            initialValue: 0
+            initialValue: 99
         }
     ],
     orderings: [

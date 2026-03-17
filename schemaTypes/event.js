@@ -11,7 +11,7 @@ export default {
             title: 'Titre',
             type: 'string',
             description: 'Ex: Tournoi de basket, Fête de l\'association...',
-            validation: Rule => Rule.required().error('Le titre est obligatoiree')
+            validation: Rule => Rule.required().error('Le titre est obligatoire')
         },
         {
             name: 'slug',
@@ -173,7 +173,7 @@ export default {
             title: 'Date (plus récent en premier)',
             name: 'dateDesc',
             by: [
-                {field: 'startDaate', direction: 'desc'}
+                {field: 'startDate', direction: 'desc'}
             ]
         },
         {

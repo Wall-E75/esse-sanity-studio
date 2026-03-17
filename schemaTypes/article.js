@@ -43,7 +43,7 @@ export default {
             title: 'Résumé court',
             type: 'text',
             rows: 3,
-            description: 'Résumé qui apparaîtra dans la liliste des actualités'
+            description: 'Résumé qui apparaîtra dans la liste des actualités'
         },
         {
             name: 'content',
