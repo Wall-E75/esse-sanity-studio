@@ -71,8 +71,8 @@ export default {
             description: 'Optionnel - uniquement si le membre souhaite être contacté'
         },
         {
-            name: 'responsabilities',
-            title: 'Résponsabilités',
+            name: 'responsibilities',
+            title: 'Responsabilités',
             type: 'array',
             of: [{type: 'string'}],
             description: 'Liste des responsabilités du membre',

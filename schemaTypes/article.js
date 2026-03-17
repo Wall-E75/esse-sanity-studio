@@ -39,7 +39,7 @@ export default {
             ]
         },
         {
-            name: 'exerpt',
+            name: 'excerpt',
             title: 'Résumé court',
             type: 'text',
             rows: 3,
