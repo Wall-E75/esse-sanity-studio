@@ -192,6 +192,46 @@ export default {
             validation: Rule => Rule.required().error('Le lien Hello Asso est obligatoire')
         },
 
+        // === CHIFFRES CLÉS ===
+        {
+            name: 'keyStats',
+            title: 'Chiffres clés',
+            type: 'array',
+            description: 'Les chiffres affichés dans la section "ESSE en chiffres" de la page À propos',
+            validation: Rule => Rule.max(6),
+            of: [{
+                type: 'object',
+                fields: [
+                    {
+                        name: 'value',
+                        title: 'Valeur',
+                        type: 'number',
+                        description: 'Ex: 800',
+                        validation: Rule => Rule.required().positive()
+                    },
+                    {
+                        name: 'suffix',
+                        title: 'Suffixe',
+                        type: 'string',
+                        description: 'Ex: + ou % (laisser vide si aucun)',
+                    },
+                    {
+                        name: 'label',
+                        title: 'Libellé',
+                        type: 'string',
+                        description: 'Ex: Adhérents',
+                        validation: Rule => Rule.required()
+                    }
+                ],
+                preview: {
+                    select: { value: 'value', suffix: 'suffix', title: 'label' },
+                    prepare({ value, suffix, title }) {
+                        return { title: `${value}${suffix ?? ''} — ${title}` }
+                    }
+                }
+            }]
+        },
+
         // === HORAIRES ===
         {
             name: 'openingHours',
