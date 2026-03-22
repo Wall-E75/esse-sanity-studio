@@ -205,9 +205,11 @@ export default {
                     {
                         name: 'value',
                         title: 'Valeur',
-                        type: 'number',
+                        type: 'string',
                         description: 'Ex: 800',
-                        validation: Rule => Rule.required().positive()
+                        validation: Rule => Rule.required()
+                            .regex(/^\d+$/, { name: 'number' })
+                            .error('Doit être un nombre entier positif')
                     },
                     {
                         name: 'suffix',
