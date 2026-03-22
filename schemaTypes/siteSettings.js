@@ -85,6 +85,12 @@ export default {
             type: 'object',
             fields: [
                 {
+                    name: 'name',
+                    title: 'Nom du lieu',
+                    type: 'string',
+                    description: 'Ex: Gymnase, Salle de sport… (par défaut : "Gymnase")'
+                },
+                {
                     name: 'street',
                     title: 'Rue',
                     type: 'string'
@@ -119,6 +125,12 @@ export default {
             title: 'Adresse de l\'EVS',
             type: 'object',
             fields: [
+                {
+                    name: 'name',
+                    title: 'Nom du lieu',
+                    type: 'string',
+                    description: 'Ex: EVS, Espace de Vie Sociale… (par défaut : "EVS")'
+                },
                 {
                     name: 'street',
                     title: 'Rue',
