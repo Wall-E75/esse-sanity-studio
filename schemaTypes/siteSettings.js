@@ -104,6 +104,13 @@ export default {
                     title: 'Lien Google Maps',
                     type: 'url',
                     description: 'Lien vers Google Maps pour le gymnase'
+                },
+                {
+                    name: 'photo',
+                    title: 'Photo du lieu',
+                    type: 'image',
+                    options: { hotspot: true },
+                    description: 'Photo du gymnase (recommandé : format paysage 16/9)'
                 }
             ]
         },
@@ -132,6 +139,13 @@ export default {
                     title: 'Lien Google Maps',
                     type: 'url',
                     description: 'Lien vers Google Maps pour l\'EVS'
+                },
+                {
+                    name: 'photo',
+                    title: 'Photo du lieu',
+                    type: 'image',
+                    options: { hotspot: true },
+                    description: 'Photo de l\'EVS (recommandé : format paysage 16/9)'
                 }
             ]
         },
