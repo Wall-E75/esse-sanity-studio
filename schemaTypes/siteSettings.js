@@ -205,6 +205,12 @@ export default {
                     name: 'linkedin',
                     title: 'LinkedIn',
                     type: 'url'
+                },
+                {
+                    name: 'whatsappCommunity',
+                    title: 'Communauté WhatsApp',
+                    type: 'url',
+                    description: 'Lien d\'invitation vers la communauté WhatsApp (génère automatiquement un QR code dans le footer)'
                 }
             ]
         },
